@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 开启状态 -->
+    <!--<item android:id="@+id/state_on"-->
+        <!--android:state_selected="true"-->
+        <!--android:drawable="@drawable/bt_switch_01"/>-->
+    <!--&lt;!&ndash; 关闭状态 &ndash;&gt;-->
+    <!--<item android:id="@+id/state_off"-->
+        <!--android:state_selected="false"-->
+        <!--android:drawable="@drawable/bt_switch_10"/>-->
+    <!--&lt;!&ndash; 开启切换到关闭的动画 &ndash;&gt;-->
+    <!--<transition android:fromId="@id/state_on"-->
+        <!--android:toId="@id/state_off">-->
+        <!--<animation-list>-->
+            <!--<item android:drawable="@drawable/bt_switch_01"-->
+                <!--android:duration="30"/>-->
+            <!--<item android:drawable="@drawable/bt_switch_02" android:duration="30"/>-->
+            <!--<item android:drawable="@drawable/bt_switch_03" android:duration="30"/>-->
+            <!--<item android:drawable="@drawable/bt_switch_04" android:duration="30"/>-->
+            <!--<item android:drawable="@drawable/bt_switch_05" android:duration="30"/>-->
+            <!--<item android:drawable="@drawable/bt_switch_06" android:duration="30"/>-->
+            <!--<item android:drawable="@drawable/bt_switch_07" android:duration="30"/>-->
+            <!--<item android:drawable="@drawable/bt_switch_08" android:duration="30"/>-->
+            <!--<item android:drawable="@drawable/bt_switch_09" android:duration="30"/>-->
+            <!--<item android:drawable="@drawable/bt_switch_10" android:duration="30"/>-->
+        <!--</animation-list> </transition>-->
+
+    <!--&lt;!&ndash; 关闭切换到开启的动画 &ndash;&gt;-->
+    <!--<transition android:fromId="@id/state_off"-->
+        <!--android:toId="@id/state_on">-->
+        <!--<animation-list>-->
+            <!--<item android:drawable="@drawable/bt_switch_10" android:duration="30"/>-->
+            <!--<item android:drawable="@drawable/bt_switch_09" android:duration="30"/>-->
+            <!--<item android:drawable="@drawable/bt_switch_08" android:duration="30"/>-->
+            <!--<item android:drawable="@drawable/bt_switch_07" android:duration="30"/>-->
+            <!--<item android:drawable="@drawable/bt_switch_06" android:duration="30"/>-->
+            <!--<item android:drawable="@drawable/bt_switch_05" android:duration="30"/>-->
+            <!--<item android:drawable="@drawable/bt_switch_04" android:duration="30"/>-->
+            <!--<item android:drawable="@drawable/bt_switch_03" android:duration="30"/>-->
+            <!--<item android:drawable="@drawable/bt_switch_02" android:duration="30"/>-->
+            <!--<item android:drawable="@drawable/bt_switch_01" android:duration="30"/>-->
+        <!--</animation-list>-->
+    <!--</transition>-->
+</animated-selector>

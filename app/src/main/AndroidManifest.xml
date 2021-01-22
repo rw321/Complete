@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tool="http://schemas.android.com/tools"
+    package="com.example.complete">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.DEVICE_POWER" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+        android:name=".app.CustomApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        tool:ignore="LockedOrientationActivity"
+        android:theme="@style/AppTheme">
+
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".ui.ARouterActivity" />
+
+        <activity android:name=".ui.OKHttpActivity" android:screenOrientation="portrait" />
+
+        <activity android:name=".ui.ScreenActivity" android:screenOrientation="portrait" />
+
+        <activity android:name=".ui.design.StyleModuleActivity" android:screenOrientation="portrait" />
+
+        <activity android:name=".ui.customview.GuideActivity" android:screenOrientation="portrait" />
+
+        <activity android:name=".ui.design.ObserverActivity" android:screenOrientation="portrait" />
+        
+        <activity android:name=".ui.design.AdapterActivity" android:screenOrientation="portrait" />
+
+        <activity android:name=".ui.customview.CustomViewActivity" android:screenOrientation="portrait" />
+
+        <activity android:name=".ui.customview.CustomScrollViewActivity" android:screenOrientation="portrait" />
+
+        <activity android:name=".ui.androidbasic.JobSchedulerActivity" android:screenOrientation="portrait" />
+        <activity android:name=".ui.EventOneActivity" android:screenOrientation="portrait" />
+        <activity android:name=".ui.EventTwoActivity" android:screenOrientation="portrait" />
+        <activity android:name=".ui.SmartRefreshActivity" android:screenOrientation="portrait" />
+        <activity android:name=".ui.customview.GestureRecognitionActivity" android:screenOrientation="portrait" />
+        <activity android:name=".ui.RxJavaTestActivity" android:screenOrientation="portrait" />
+        <activity android:name=".ui.thirdlib.ThirdLibTestActivity" android:screenOrientation="portrait" />
+        <activity android:name=".animation.AnimActivity" android:screenOrientation="portrait" />
+        <activity android:name=".animation.TweenAnimActivity" android:screenOrientation="portrait" />
+        <activity android:name=".animation.PropertyAnimActivity" android:screenOrientation="portrait" />
+        <activity android:name=".animation.InterpolatorActivity" android:screenOrientation="portrait" />
+        <activity android:name=".ui.customview.TableActivity" android:screenOrientation="portrait" />
+        <activity android:name=".ui.ViewPagerTestActivity" android:screenOrientation="portrait" />
+        <activity android:name=".ui.annotation.AnnotationTestActivity" android:screenOrientation="portrait" />
+        <activity android:name=".thread.ThreadTestActivity" android:screenOrientation="portrait" />
+        <activity android:name=".dagger.DaggerTestActivity" android:screenOrientation="portrait" />
+        <activity android:name=".ui.customview.PickkerViewTestActivity" android:screenOrientation="portrait" />
+        <activity android:name=".ui.SyncTestActivity" />
+
+        <receiver
+            android:name=".receiver.ScreenOffAdminReceiver"
+            android:label="@string/app_name"
+            android:permission="android.permission.BIND_DEVICE_ADMIN" >
+
+            <meta-data
+            android:name="android.app.device_admin"
+            android:resource="@xml/device_admin" />
+
+            <intent-filter>
+                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name=".ui.androidbasic.MyJobScheduler"
+            android:permission="android.permission.BIND_JOB_SERVICE"/>
+
+    </application>
+
+</manifest>
