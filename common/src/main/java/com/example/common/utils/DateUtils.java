@@ -12,6 +12,8 @@ public class DateUtils {
 
     public static final String FORMAT_YMD = "yyyy-MM-dd";
 
+    public static final String FORMAT_YMD_NUM = "yyyyMMdd";
+
     public static final String FORMAT_HM = "HH:mm";
 
     public static final String FORMAT_MDHM = "MM-dd HH:mm";

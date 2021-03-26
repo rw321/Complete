@@ -2,16 +2,15 @@ package com.example.complete.dagger;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.os.PersistableBundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.complete.R;
 
 import javax.inject.Inject;
 
-import butterknife.OnClick;
 
 public class DaggerTestActivity extends AppCompatActivity implements ICommonView {
 

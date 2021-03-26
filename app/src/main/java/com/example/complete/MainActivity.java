@@ -1,106 +1,68 @@
 package com.example.complete;
 
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.content.Context;
+import android.graphics.Color;
 import android.view.View;
 
-import com.example.complete.animation.AnimActivity;
-import com.example.complete.dagger.DaggerTestActivity;
-import com.example.complete.thread.ThreadTestActivity;
-import com.example.complete.ui.ARouterActivity;
-import com.example.complete.ui.SmartRefreshActivity;
-import com.example.complete.ui.SyncTestActivity;
-import com.example.complete.ui.ViewPagerTestActivity;
-import com.example.complete.ui.androidbasic.JobSchedulerActivity;
-import com.example.complete.ui.annotation.AnnotationTestActivity;
-import com.example.complete.ui.customview.CustomViewActivity;
-import com.example.complete.ui.ScreenActivity;
-import com.example.complete.ui.customview.TableActivity;
-import com.example.complete.ui.design.StyleModuleActivity;
-import com.example.complete.ui.thirdlib.ThirdLibTestActivity;
+import com.example.complete.base.BaseActivity;
+import com.example.complete.databinding.ActivityMainBinding;
 
-public class MainActivity extends AppCompatActivity {
+import net.lucode.hackware.magicindicator.buildins.commonnavigator.CommonNavigator;
+import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.CommonNavigatorAdapter;
+import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.IPagerIndicator;
+import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.IPagerTitleView;
+import net.lucode.hackware.magicindicator.buildins.commonnavigator.titles.ClipPagerTitleView;
+
+
+public class MainActivity extends BaseActivity<ActivityMainBinding> {
+
+    private String[] tabs = new String[]{"首页" , "第二页" , "第三页" , "我的"};
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        setTitle("First Page");
-
-    }
-
-    public void tableView(View view) {
-        startActivity(new Intent(this , TableActivity.class));
-    }
-
-    public void viewPager(View view) {
-        startActivity(new Intent(this , ViewPagerTestActivity.class));
-    }
-
-    public void goAnnotationPage(View view) {
-        startActivity(new Intent(this , AnnotationTestActivity.class));
-    }
-
-    public void threadTest(View view) {
-        startActivity(new Intent(this , ThreadTestActivity.class));
-    }
-
-    public void daggerTest(View view) {
-        startActivity(new Intent(this , DaggerTestActivity.class));
-    }
-
-    public void syncTest(View view) {
-        startActivity(new Intent(this , SyncTestActivity.class));
-    }
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu, menu);
-        return true;
+    protected int getLayoutId() {
+        return R.layout.activity_main;
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int i = item.getItemId();
-        switch (i) {
-            //ARouter
-            case R.id.one:
-                ARouterActivity.startActivity(this);
-                break;
-            //设计模式
-            case R.id.two:
-                StyleModuleActivity.startActivity(this);
-                break;
-            //第三方库测试
-            case R.id.three:
-                startActivity(new Intent(this , ThirdLibTestActivity.class));
-                break;
-            //息屏测试
-            case R.id.four:
-                startActivity(new Intent(this , ScreenActivity.class));
-                break;
-            //自定义View测试
-            case R.id.five:
-                CustomViewActivity.startActivity(this);
-                break;
-            //下拉上拉刷新
-            case R.id.six:
-                startActivity(new Intent(this , SmartRefreshActivity.class));
-                break;
-            //
-            case R.id.seven:
-                startActivity(new Intent(this , AnimActivity.class));
-                break;
-            //JobScheduler测试
-            case R.id.eight:
-                startActivity(new Intent(this , JobSchedulerActivity.class));
-                break;
+    protected void initData() {
+        super.initData();
+        initTab();
 
-        }
-        return true;
     }
+
+    private void initTab(){
+        CommonNavigator commonNavigator = new CommonNavigator(this);
+        CommonNavigatorAdapter commonNavigatorAdapter = new CommonNavigatorAdapter() {
+            @Override
+            public int getCount() {
+                return tabs.length;
+            }
+
+            @Override
+            public IPagerTitleView getTitleView(Context context, int index) {
+                ClipPagerTitleView clipPagerTitleView = new ClipPagerTitleView(context);
+
+                clipPagerTitleView.setText(tabs[index]);
+                clipPagerTitleView.setTextColor(Color.parseColor("#f2c4c4"));
+                clipPagerTitleView.setClipColor(Color.WHITE);
+
+                clipPagerTitleView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //mPager.setCurrentItem(index);
+                    }
+                });
+
+                return clipPagerTitleView;
+            }
+
+            @Override
+            public IPagerIndicator getIndicator(Context context) {
+                return null;
+            }
+        };
+        commonNavigator.setAdapter(commonNavigatorAdapter);
+        mContentBinding.miMain.setNavigator(commonNavigator);
+    }
+
 }

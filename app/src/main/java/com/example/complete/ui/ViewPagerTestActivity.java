@@ -2,24 +2,22 @@ package com.example.complete.ui;
 
 import android.os.Handler;
 import android.os.Message;
-import android.support.v4.view.ViewPager;
+
+import androidx.viewpager.widget.ViewPager;
 
 import com.example.complete.R;
 import com.example.complete.adapter.ViewPagerTestAdapter;
 import com.example.complete.base.BaseActivity;
 import com.example.complete.view.ScaleTransformer;
 
-import java.security.KeyStore;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.BindView;
 
 public class ViewPagerTestActivity extends BaseActivity {
 
     private static final int FREQUENCY_VIEW_PAGER = 3000;
 
-    @BindView(R.id.viewPager)
     ViewPager viewPager;
 
     private int currentPosition;

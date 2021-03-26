@@ -1,9 +1,10 @@
 package com.example.complete.view.recycler;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
 import android.util.Pair;
 import android.view.ViewGroup;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 

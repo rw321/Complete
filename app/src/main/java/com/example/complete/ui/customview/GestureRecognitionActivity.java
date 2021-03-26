@@ -1,6 +1,6 @@
 package com.example.complete.ui.customview;
 
-import android.support.v4.view.GestureDetectorCompat;
+import androidx.core.view.GestureDetectorCompat;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
@@ -9,12 +9,10 @@ import android.widget.LinearLayout;
 import com.example.complete.R;
 import com.example.complete.base.BaseActivity;
 
-import butterknife.BindView;
 
 public class GestureRecognitionActivity extends BaseActivity implements GestureDetector.OnGestureListener
             , GestureDetector.OnDoubleTapListener{
 
-    @BindView(R.id.ll_container)
     LinearLayout llContainer;
     private GestureDetectorCompat mDetectorCompat;
 

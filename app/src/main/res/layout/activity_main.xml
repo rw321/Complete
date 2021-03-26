@@ -1,51 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="表格"
-        android:onClick="tableView"/>
+    <data>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ViewPager"
-        android:textAllCaps="false"
-        android:onClick="viewPager"/>
+    </data>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Annotation"
-        android:textAllCaps="false"
-        android:onClick="goAnnotationPage"/>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Thread"
-        android:textAllCaps="false"
-        android:onClick="threadTest"/>
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/vp_main"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Dagger"
-        android:textAllCaps="false"
-        android:onClick="daggerTest"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_half_1"
+            android:background="@color/color_DE" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sync"
-        android:textAllCaps="false"
-        android:onClick="syncTest"/>
+        <net.lucode.hackware.magicindicator.MagicIndicator
+            android:id="@+id/mi_main"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_49" />
 
 
-</LinearLayout>
+    </LinearLayout>
+</layout>

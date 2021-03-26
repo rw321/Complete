@@ -5,7 +5,6 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.DEVICE_POWER" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
@@ -26,8 +25,6 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ui.ARouterActivity" />
-
         <activity android:name=".ui.OKHttpActivity" android:screenOrientation="portrait" />
 
         <activity android:name=".ui.ScreenActivity" android:screenOrientation="portrait" />
@@ -45,8 +42,6 @@
         <activity android:name=".ui.customview.CustomScrollViewActivity" android:screenOrientation="portrait" />
 
         <activity android:name=".ui.androidbasic.JobSchedulerActivity" android:screenOrientation="portrait" />
-        <activity android:name=".ui.EventOneActivity" android:screenOrientation="portrait" />
-        <activity android:name=".ui.EventTwoActivity" android:screenOrientation="portrait" />
         <activity android:name=".ui.SmartRefreshActivity" android:screenOrientation="portrait" />
         <activity android:name=".ui.customview.GestureRecognitionActivity" android:screenOrientation="portrait" />
         <activity android:name=".ui.RxJavaTestActivity" android:screenOrientation="portrait" />

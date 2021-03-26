@@ -1,25 +1,37 @@
 package com.example.complete.base;
 
-import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.view.LayoutInflater;
 
-import com.alibaba.android.arouter.launcher.ARouter;
-import com.example.complete.utils.EventBusUtils;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+import androidx.databinding.ViewDataBinding;
 
-import butterknife.ButterKnife;
+import com.example.complete.R;
+import com.example.complete.databinding.LayoutBaseBinding;
 
-public abstract class BaseActivity extends AppCompatActivity {
+public abstract class BaseActivity<DB extends ViewDataBinding> extends AppCompatActivity {
+
+    Context mContext;
+
+    protected DB mContentBinding;
+    private LayoutBaseBinding rootDataBinding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(getLayoutId());
-        ARouter.getInstance().inject(this);
-        ButterKnife.bind(this);
-        if (isRegisterEventBus()) {
-            EventBusUtils.register(this);
+        mContext = this;
+        rootDataBinding = DataBindingUtil.inflate(
+                LayoutInflater.from(this),
+                R.layout.layout_base, null, false);
+        setContentView(rootDataBinding.getRoot());
+        rootDataBinding.root.removeAllViews();
+        if (getLayoutId() != 0) {
+            mContentBinding = DataBindingUtil.inflate(LayoutInflater.from(this), getLayoutId(), null, false);
+            rootDataBinding.root.addView(mContentBinding.getRoot());
         }
+
         initData();
         initListener();
     }
@@ -27,9 +39,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if (isRegisterEventBus()) {
-            EventBusUtils.unregister(this);
-        }
+
     }
 
     protected abstract int getLayoutId();
@@ -40,10 +50,6 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     protected void initListener() {
 
-    }
-
-    protected boolean isRegisterEventBus() {
-        return false;
     }
 
 }

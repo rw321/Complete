@@ -1,13 +1,12 @@
 package com.example.complete.ui;
 
-import android.bluetooth.BluetoothClass;
-import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.DividerItemDecoration;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.complete.R;
 import com.example.complete.adapter.SimpleTextAdapter;
@@ -19,13 +18,9 @@ import com.scwang.smartrefresh.layout.listener.OnRefreshLoadMoreListener;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 
 public class SmartRefreshActivity extends BaseActivity {
-    @BindView(R.id.rv_content)
     RecyclerView rvContent;
-    @BindView(R.id.refreshLayout)
     SmartRefreshLayout refreshLayout;
 
     Handler handler = new Handler() {

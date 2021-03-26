@@ -14,8 +14,6 @@ import com.example.complete.bean.Student;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.OnClick;
 import rx.Observable;
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
@@ -24,9 +22,7 @@ import rx.functions.Func1;
 import rx.schedulers.Schedulers;
 
 public class RxJavaTestActivity extends BaseActivity {
-    @BindView(R.id.tv_print)
     TextView tvPrint;
-    @BindView(R.id.iv_image)
     ImageView ivImage;
 
     @Override
@@ -40,7 +36,6 @@ public class RxJavaTestActivity extends BaseActivity {
         setTitle("Rxjava");
     }
 
-    @OnClick(R.id.tv_print)
     public void print() {
         String [] datas = {"Monday" , "Tuesday" , "Wednesday" , "Thursday" , "Friday" , "Saturday" , "Sunday"};
         Observable.from(datas).subscribe(new Action1<String>() {
@@ -51,7 +46,6 @@ public class RxJavaTestActivity extends BaseActivity {
         });
     }
 
-    @OnClick(R.id.tv_show)
     public void show() {
         Observable.create(new Observable.OnSubscribe<Drawable>() {
             @Override
@@ -79,7 +73,6 @@ public class RxJavaTestActivity extends BaseActivity {
 
     }
 
-    @OnClick(R.id.tv_change)
     public void changeThread() {
         Observable.just(1,2,3,4)
                 .subscribeOn(Schedulers.io())
@@ -92,7 +85,6 @@ public class RxJavaTestActivity extends BaseActivity {
                 });
     }
 
-    @OnClick(R.id.tv_map)
     public void mapTest() {
         Observable.just(R.mipmap.a7)
                 .map(new Func1<Integer, Bitmap>() {
@@ -112,7 +104,6 @@ public class RxJavaTestActivity extends BaseActivity {
                 });
     }
 
-    @OnClick(R.id.tv_flatmap)
     public void flatMap() {
         List<Student> students = new ArrayList<>();
         for (int index =0; index < 10; index++) {

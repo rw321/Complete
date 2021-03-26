@@ -1,14 +1,15 @@
 package com.example.complete.ui.customview;
 
 import android.graphics.Color;
-import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v4.view.ViewPager;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentStatePagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 import com.example.complete.R;
 import com.example.complete.base.BaseActivity;
+import com.google.android.material.tabs.TabLayout;
 
 import java.util.Arrays;
 import java.util.List;

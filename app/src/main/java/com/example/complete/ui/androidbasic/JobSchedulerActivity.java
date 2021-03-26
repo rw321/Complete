@@ -4,11 +4,8 @@ import android.app.job.JobInfo;
 import android.app.job.JobScheduler;
 import android.content.ComponentName;
 import android.os.Build;
-import android.os.Handler;
-import android.os.Message;
-import android.os.Messenger;
-import android.os.PersistableBundle;
-import android.support.annotation.RequiresApi;
+
+import androidx.annotation.RequiresApi;
 
 import com.example.complete.R;
 import com.example.complete.base.BaseActivity;

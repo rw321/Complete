@@ -9,7 +9,6 @@ import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-import butterknife.OnClick;
 
 public class AnnotationTestActivity extends BaseActivity {
 
@@ -73,7 +72,6 @@ public class AnnotationTestActivity extends BaseActivity {
         }
     }
 
-    @OnClick(R.id.tv_text)
     public void onClick(){
         System.out.println("threadId =====" + Thread.currentThread().getId());
         new Thread() {

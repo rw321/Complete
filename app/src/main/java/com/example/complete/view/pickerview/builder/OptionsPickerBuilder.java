@@ -2,9 +2,10 @@ package com.example.complete.view.pickerview.builder;
 
 import android.content.Context;
 import android.graphics.Typeface;
-import android.support.annotation.ColorInt;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.annotation.ColorInt;
 
 import com.example.complete.view.pickerview.configure.PickerOptions;
 import com.example.complete.view.pickerview.listener.CustomListener;

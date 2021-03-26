@@ -13,14 +13,11 @@ import android.widget.ImageView;
 import com.example.complete.R;
 import com.example.complete.base.BaseActivity;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 
 /**
  * 属性动画没有setFillAfter , 因为动画执行过程中,控件属性已经真实改变,控件已经不在初始状态了,所以没必要在恢复到初始状态
  */
 public class PropertyAnimActivity extends BaseActivity {
-    @BindView(R.id.iv_pic)
     ImageView ivPic;
 
     @Override

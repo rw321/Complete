@@ -18,11 +18,8 @@ import android.widget.ImageView;
 import com.example.complete.R;
 import com.example.complete.base.BaseActivity;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 
 public class InterpolatorActivity extends BaseActivity {
-    @BindView(R.id.iv_pic)
     ImageView ivPic;
 
     @Override

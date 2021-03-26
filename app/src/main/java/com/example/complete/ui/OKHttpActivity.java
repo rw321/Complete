@@ -5,22 +5,19 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import androidx.annotation.Nullable;
 
 import com.example.complete.R;
 import com.example.complete.base.BaseActivity;
 
 import java.io.File;
 import java.io.IOException;
-import java.time.Duration;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.FormBody;
@@ -34,9 +31,7 @@ import okhttp3.Response;
 import okio.BufferedSink;
 
 public class OKHttpActivity extends BaseActivity {
-    @BindView(R.id.tv_content)
     TextView tvContent;
-    @BindView(R.id.iv_content)
     ImageView ivContent;
 
     @Override
@@ -103,7 +98,7 @@ public class OKHttpActivity extends BaseActivity {
     private void asynGetRequest() {
 
         String url = "http://60.205.243.97:8088/cjapp/app/yngpHomePage.htm";
-        OkHttpClient client = new OkHttpClient.Builder().connectTimeout(Duration.ofMillis(30000)).build();
+        OkHttpClient client = new OkHttpClient.Builder().build();
         final Request request = new Request.Builder().url(url).get().build();
         Call call = client.newCall(request);
         call.enqueue(new Callback() {
@@ -336,12 +331,4 @@ public class OKHttpActivity extends BaseActivity {
         Intent intent = new Intent(context, OKHttpActivity.class);
         context.startActivity(intent);
     }
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // TODO: add setContentView(...) invocation
-        ButterKnife.bind(this);
-    }
-
 }

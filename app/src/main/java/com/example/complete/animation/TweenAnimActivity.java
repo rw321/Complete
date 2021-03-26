@@ -14,13 +14,11 @@ import com.example.common.utils.ToastUtils;
 import com.example.complete.R;
 import com.example.complete.base.BaseActivity;
 
-import butterknife.BindView;
 
 /**
  * 补间动画测试
  */
 public class TweenAnimActivity extends BaseActivity {
-    @BindView(R.id.iv_pic)
     ImageView ivPic;
 
     @Override

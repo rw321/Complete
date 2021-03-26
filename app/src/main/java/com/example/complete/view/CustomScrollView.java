@@ -2,7 +2,7 @@ package com.example.complete.view;
 
 import android.content.Context;
 import android.database.DataSetObserver;
-import android.support.v4.view.MotionEventCompat;
+import androidx.core.view.MotionEventCompat;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.VelocityTracker;

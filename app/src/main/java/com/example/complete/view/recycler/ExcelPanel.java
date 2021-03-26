@@ -2,9 +2,13 @@ package com.example.complete.view.recycler;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+
+import androidx.annotation.RequiresApi;
+import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import android.os.Build;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
@@ -123,6 +127,7 @@ public class ExcelPanel extends FrameLayout implements ViewTreeObserver.OnGlobal
 
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
     public void onGlobalLayout() {
         if (dividerHeight == getMeasuredHeight() && getMeasuredHeight() != 0) {
