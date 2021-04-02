@@ -16,5 +16,6 @@
     <!-- 选项文字大小 -->
     <dimen name="pickerview_textsize">20sp</dimen>
     <dimen name="sp_24">24sp</dimen>
+    <dimen name="dp_12">12dp</dimen>
 
 </resources>
