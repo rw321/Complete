@@ -4,9 +4,11 @@ import android.content.Context;
 import android.graphics.Color;
 import android.view.View;
 
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
+import com.example.common.utils.FragmentUtils;
 import com.example.complete.base.BaseActivity;
 import com.example.complete.base.ViewPagerAdapter;
 import com.example.complete.databinding.ActivityMainBinding;
@@ -15,6 +17,7 @@ import com.example.complete.fragment.MeFragment;
 import com.example.complete.fragment.SecondFragment;
 import com.example.complete.fragment.ThirdFragment;
 
+import net.lucode.hackware.magicindicator.ViewPagerHelper;
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.CommonNavigator;
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.CommonNavigatorAdapter;
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.IPagerIndicator;
@@ -24,10 +27,14 @@ import net.lucode.hackware.magicindicator.buildins.commonnavigator.titles.ClipPa
 import java.util.ArrayList;
 import java.util.List;
 
+import io.reactivex.internal.schedulers.ImmediateThinScheduler;
+
 
 public class MainActivity extends BaseActivity<ActivityMainBinding> {
 
     private String[] tabs = new String[]{"首页" , "第二页" , "第三页" , "我的"};
+    private List<Fragment> fragments;
+    private int mCurrFragmentIndex;
 
     @Override
     protected int getLayoutId() {
@@ -38,17 +45,30 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> {
     protected void initData() {
         super.initData();
         initTab();
-        List<Fragment> fragments = new ArrayList<>();
+        fragments = new ArrayList<>();
         fragments.add(FirstFragment.getInstance());
         fragments.add(SecondFragment.getInstance());
         fragments.add(ThirdFragment.getInstance());
         fragments.add(MeFragment.getInstance());
-        mContentBinding.vpMain.setAdapter(new ViewPagerAdapter(getSupportFragmentManager() , fragments));
+        showFragment(0);
+    }
 
+    private void showFragment(int index) {
+        Fragment fragment = fragments.get(mCurrFragmentIndex);
+        if (fragment.isAdded()) {
+            FragmentUtils.hideFragment(getSupportFragmentManager() , fragment);
+        }
+        mCurrFragmentIndex = index;
+        fragment = fragments.get(mCurrFragmentIndex);
+        if (fragment.isAdded())
+            FragmentUtils.showFragment(getSupportFragmentManager() , fragment);
+        else
+            FragmentUtils.addFragment(getSupportFragmentManager() , R.id.fl_container , fragment);
     }
 
     private void initTab(){
         CommonNavigator commonNavigator = new CommonNavigator(this);
+        commonNavigator.setAdjustMode(true);
         CommonNavigatorAdapter commonNavigatorAdapter = new CommonNavigatorAdapter() {
             @Override
             public int getCount() {
@@ -60,13 +80,17 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> {
                 ClipPagerTitleView clipPagerTitleView = new ClipPagerTitleView(context);
 
                 clipPagerTitleView.setText(tabs[index]);
-                clipPagerTitleView.setTextColor(Color.parseColor("#f2c4c4"));
+                clipPagerTitleView.setTextColor(ContextCompat.getColor(MainActivity.this , R.color.color_999));
                 clipPagerTitleView.setClipColor(Color.BLACK);
 
                 clipPagerTitleView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        mContentBinding.vpMain.setCurrentItem(index);
+                        //mContentBinding.vpMain.setCurrentItem(index);
+                        mContentBinding.miMain.onPageSelected(index);
+                        mContentBinding.miMain.onPageScrolled(index , 0 , 0);
+                        showFragment(index);
+
                     }
                 });
 
@@ -80,26 +104,6 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> {
         };
         commonNavigator.setAdapter(commonNavigatorAdapter);
         mContentBinding.miMain.setNavigator(commonNavigator);
-    }
-
-    @Override
-    protected void initListener() {
-        super.initListener();
-        mContentBinding.vpMain.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-                mContentBinding.miMain.onPageScrolled(position , positionOffset , positionOffsetPixels);
-            }
-
-            @Override
-            public void onPageSelected(int position) {
-                mContentBinding.miMain.onPageSelected(position);
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-                mContentBinding.miMain.onPageScrollStateChanged(state);
-            }
-        });
+        //ViewPagerHelper.bind(mContentBinding.miMain , mContentBinding.vpMain);
     }
 }
