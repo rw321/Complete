@@ -10,10 +10,81 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
+        <EditText
+            android:id="@+id/et_input"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="搜索" />
+            android:layout_height="@dimen/dp_49"
+            android:background="@drawable/shape_bg_search"
+            android:layout_margin="@dimen/dp_12"
+            android:hint="请输入搜索内容"
+            android:paddingLeft="@dimen/dp_12"/>
+
+        <com.example.complete.search.view.FlowLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/dp_12"
+            android:paddingRight="@dimen/dp_12">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_24"
+                android:text="今日热点"
+                android:gravity="center"
+                android:paddingLeft="@dimen/dp_12"
+                android:paddingRight="@dimen/dp_12"
+                android:background="@drawable/shape_bg_search"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_24"
+                android:text="时事"
+                android:gravity="center"
+                android:paddingLeft="@dimen/dp_12"
+                android:paddingRight="@dimen/dp_12"
+                android:background="@drawable/shape_bg_search"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_24"
+                android:text="财经频道"
+                android:gravity="center"
+                android:paddingLeft="@dimen/dp_12"
+                android:paddingRight="@dimen/dp_12"
+                android:background="@drawable/shape_bg_search"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_24"
+                android:text="金融消息"
+                android:gravity="center"
+                android:paddingLeft="@dimen/dp_12"
+                android:paddingRight="@dimen/dp_12"
+                android:background="@drawable/shape_bg_search"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_24"
+                android:text="小说家"
+                android:gravity="center"
+                android:paddingLeft="@dimen/dp_12"
+                android:paddingRight="@dimen/dp_12"
+                android:background="@drawable/shape_bg_search"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_24"
+                android:text="历史"
+                android:gravity="center"
+                android:paddingLeft="@dimen/dp_12"
+                android:paddingRight="@dimen/dp_12"
+                android:background="@drawable/shape_bg_search"/>
+
+
+
+        </com.example.complete.search.view.FlowLayout>
+
+
 
     </LinearLayout>
 </layout>

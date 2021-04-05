@@ -1,4 +1,4 @@
-package com.example.complete.ui.annotation;
+package com.example.complete.annotation;
 
 import android.os.Handler;
 import android.os.Looper;

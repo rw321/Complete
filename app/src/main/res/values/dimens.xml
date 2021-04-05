@@ -17,5 +17,8 @@
     <dimen name="pickerview_textsize">20sp</dimen>
     <dimen name="sp_24">24sp</dimen>
     <dimen name="dp_12">12dp</dimen>
+    <dimen name="dp_24">24dp</dimen>
+    <dimen name="dp_36">36dp</dimen>
+    <dimen name="dp_6">6dp</dimen>
 
 </resources>

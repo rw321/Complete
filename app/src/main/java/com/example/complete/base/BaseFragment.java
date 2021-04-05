@@ -30,10 +30,11 @@ public abstract class BaseFragment<DB extends ViewDataBinding> extends Fragment 
         rootDataBinding.root.removeAllViews();
         if (getLayoutId() != 0) {
             mContentBinding = DataBindingUtil.inflate(LayoutInflater.from(container.getContext()), getLayoutId(), null, false);
-            rootDataBinding.root.addView(mContentBinding.getRoot());
+            if (mContentBinding != null)
+                rootDataBinding.root.addView(mContentBinding.getRoot());
         }
 
-
+        initData();
         return rootDataBinding.getRoot();
     }
 

@@ -4,15 +4,10 @@
     <data>
         
         <import type="com.example.complete.home.HomeHandler" />
-        <import type="com.example.complete.home.UserInfo" />
 
         <variable
             name="handler"
             type="HomeHandler" />
-
-        <variable
-            name="userInfo"
-            type="UserInfo" />
 
     </data>
 
@@ -33,11 +28,6 @@
             android:gravity="center_vertical"
             android:paddingLeft="@dimen/dp_12"
             android:onClick="@{(v) -> handler.skip(v)}"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@={userInfo.userName}" />
 
     </LinearLayout>
 </layout>

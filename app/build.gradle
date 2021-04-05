@@ -14,7 +14,6 @@ android {
                 arguments = [AROUTER_MODULE_NAME: project.getName()]
             }
         }
-
     }
 
     lintOptions {
@@ -65,5 +64,9 @@ dependencies {
     implementation 'androidx.annotation:annotation:+'
 
     implementation 'com.github.hackware1993:MagicIndicator:1.7.0'
+
+    androidTestImplementation 'androidx.test:rules:1.2.0'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    annotationProcessor project(':compiler')
 
 }

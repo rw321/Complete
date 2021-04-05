@@ -29,7 +29,8 @@ public abstract class BaseActivity<DB extends ViewDataBinding> extends AppCompat
         rootDataBinding.root.removeAllViews();
         if (getLayoutId() != 0) {
             mContentBinding = DataBindingUtil.inflate(LayoutInflater.from(this), getLayoutId(), null, false);
-            rootDataBinding.root.addView(mContentBinding.getRoot());
+            if (mContentBinding != null)
+                rootDataBinding.root.addView(mContentBinding.getRoot());
         }
 
         initData();

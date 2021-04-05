@@ -6,18 +6,15 @@ import android.view.View;
 
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
-import androidx.viewpager.widget.ViewPager;
 
 import com.example.common.utils.FragmentUtils;
 import com.example.complete.base.BaseActivity;
-import com.example.complete.base.ViewPagerAdapter;
 import com.example.complete.databinding.ActivityMainBinding;
-import com.example.complete.fragment.FirstFragment;
+import com.example.complete.home.FirstFragment;
 import com.example.complete.fragment.MeFragment;
-import com.example.complete.fragment.SecondFragment;
+import com.example.complete.second.SecondFragment;
 import com.example.complete.fragment.ThirdFragment;
 
-import net.lucode.hackware.magicindicator.ViewPagerHelper;
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.CommonNavigator;
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.CommonNavigatorAdapter;
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.IPagerIndicator;
@@ -26,8 +23,6 @@ import net.lucode.hackware.magicindicator.buildins.commonnavigator.titles.ClipPa
 
 import java.util.ArrayList;
 import java.util.List;
-
-import io.reactivex.internal.schedulers.ImmediateThinScheduler;
 
 
 public class MainActivity extends BaseActivity<ActivityMainBinding> {

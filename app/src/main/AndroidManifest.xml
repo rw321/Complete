@@ -52,13 +52,15 @@
         <activity android:name=".animation.InterpolatorActivity" android:screenOrientation="portrait" />
         <activity android:name=".ui.customview.TableActivity" android:screenOrientation="portrait" />
         <activity android:name=".ui.ViewPagerTestActivity" android:screenOrientation="portrait" />
-        <activity android:name=".ui.annotation.AnnotationTestActivity" android:screenOrientation="portrait" />
+        <activity android:name=".annotation.AnnotationTestActivity" android:screenOrientation="portrait" />
         <activity android:name=".thread.ThreadTestActivity" android:screenOrientation="portrait" />
         <activity android:name=".dagger.DaggerTestActivity" android:screenOrientation="portrait" />
         <activity android:name=".ui.customview.PickkerViewTestActivity" android:screenOrientation="portrait" />
         <activity android:name=".ui.SyncTestActivity" />
 
         <activity android:name=".search.SearchActivity" android:screenOrientation="portrait" />
+
+        <activity android:name=".generic.GenericTestActivity" android:screenOrientation="portrait" />
 
         <receiver
             android:name=".receiver.ScreenOffAdminReceiver"

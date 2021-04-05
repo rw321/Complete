@@ -1,12 +1,10 @@
-package com.example.complete.fragment;
+package com.example.complete.home;
 
 import android.os.Bundle;
 
 import com.example.complete.R;
 import com.example.complete.base.BaseFragment;
 import com.example.complete.databinding.FragmentFirstBinding;
-import com.example.complete.home.HomeHandler;
-import com.example.complete.home.UserInfo;
 
 public class FirstFragment extends BaseFragment<FragmentFirstBinding> {
     @Override
@@ -18,9 +16,6 @@ public class FirstFragment extends BaseFragment<FragmentFirstBinding> {
     protected void initData() {
         super.initData();
         mContentBinding.setHandler(new HomeHandler());
-        UserInfo userInfo = new UserInfo("Alex");
-        mContentBinding.setUserInfo(userInfo);
-        userInfo.setUserName("任伟");
     }
 
     public static FirstFragment getInstance() {
