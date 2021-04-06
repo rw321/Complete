@@ -7,6 +7,7 @@ import com.example.complete.base.BaseFragment;
 import com.example.complete.databinding.FragmentFirstBinding;
 
 public class FirstFragment extends BaseFragment<FragmentFirstBinding> {
+
     @Override
     protected int getLayoutId() {
         return R.layout.fragment_first;
