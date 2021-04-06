@@ -8,74 +8,55 @@ import android.widget.Toast;
 
 import com.example.complete.R;
 import com.example.complete.base.BaseActivity;
+import com.example.complete.databinding.ActivityDesignModelBinding;
 import com.example.complete.design.HangryClient;
+import com.example.complete.design.Message;
+import com.example.complete.design.MessageImpl;
+import com.example.complete.design.MessageProxy;
 import com.example.complete.design.PersonComplete;
 import com.example.complete.design.User;
 import com.example.complete.design.YellowPeople;
 
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
+
 /**
  * 测试设计模式
  */
-public class StyleModuleActivity extends BaseActivity {
+public class StyleModuleActivity extends BaseActivity<ActivityDesignModelBinding> {
     @Override
     protected int getLayoutId() {
-        return R.layout.activity_main;
+        return R.layout.activity_design_model;
     }
 
     @Override
     protected void initData() {
         super.initData();
-        setTitle("设计模式测试");
+        proxyTest();
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu, menu);
-        return true;
+    /**
+     * 如何在内存中生成Class对象
+     * ProxyClassFactory类内部调用ProxyGenerator.generatorProxy("要生成类的类名","要代理的接口数组"),返回二进制数组,然后调用Proxy.defineClass0()生成Class对象
+     */
+    private void proxyTest() {
+        //静态代理
+        //new MessageProxy(new MessageImpl()).send();
+        //动态代理
+        MessageImpl messageImpl = new MessageImpl();
+        Object o = Proxy.newProxyInstance(MessageImpl.class.getClassLoader(), new Class[]{Message.class}, new InvocationHandler() {
+            @Override
+            public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+                return method.invoke(messageImpl , args);
+            }
+        });
+
+        Message message = (Message) o;
+        message.send();
+
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int i = item.getItemId();
-        switch (i) {
-            //建造者模式
-            case R.id.one:
-                User user = new User.Builder("Alex", 1).age(28).phone("13264497440").address("China").build();
-                System.out.println(user.toString());
-                break;
-            //模板方法模式
-            case R.id.two:
-                PersonComplete person = new YellowPeople();
-                person.desc();
-                break;
-            //外观模式
-            case R.id.three:
-                new HangryClient().eat();
-                break;
-            //观察者模式
-            case R.id.four:
-                ObserverActivity.startActivity(this);
-                break;
-            //适配器模式
-            case R.id.five:
-                AdapterActivity.startActivity(this);
-                break;
-            //
-            case R.id.six:
-
-                break;
-            //
-            case R.id.seven:
-                Toast.makeText(this, "seven", Toast.LENGTH_SHORT).show();
-                break;
-            //
-            case R.id.eight:
-                Toast.makeText(this, "eight", Toast.LENGTH_SHORT).show();
-                break;
-
-        }
-        return true;
-    }
 
     public static void startActivity(Context context) {
         Intent intent = new Intent(context , StyleModuleActivity.class);

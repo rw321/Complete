@@ -5,6 +5,7 @@ import android.view.View;
 
 import com.example.complete.annotation.AnnotationTestActivity;
 import com.example.complete.generic.GenericTestActivity;
+import com.example.complete.ui.design.StyleModuleActivity;
 
 public class SecondHandler {
 
@@ -18,6 +19,10 @@ public class SecondHandler {
         intent.putExtra("age" , 18);
         view.getContext().startActivity(intent);
 
+    }
+
+    public void skipToDesignModel(View view){
+        StyleModuleActivity.startActivity(view.getContext());
     }
 
 
