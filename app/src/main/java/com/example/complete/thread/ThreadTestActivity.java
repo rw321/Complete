@@ -1,9 +1,12 @@
 package com.example.complete.thread;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.View;
 
 import com.example.complete.R;
 import com.example.complete.base.BaseActivity;
+import com.example.complete.databinding.ActivityThreadBinding;
 
 /**
  * java 中的原子性 可见性
@@ -33,7 +36,7 @@ import com.example.complete.base.BaseActivity;
  * ②把主内存中的共享变量的值同步到其他工作内存中
  *
  */
-public class ThreadTestActivity extends BaseActivity {
+public class ThreadTestActivity extends BaseActivity<ActivityThreadBinding> {
 
     private static final int THREAD_COUNT = 20;
     private static int count;
@@ -46,8 +49,19 @@ public class ThreadTestActivity extends BaseActivity {
     @Override
     protected void initData() {
         super.initData();
+        testConnectionPool();
 
     }
+
+    /**
+     * 测试wait()&notify()
+     */
+    private void testConnectionPool() {
+        QiangTang qiangTang = new QiangTang();
+        new AddThread(qiangTang).start();
+        new ShootThread(qiangTang).start();
+    }
+
 
     private static void increase() {
         count++;
@@ -137,6 +151,10 @@ public class ThreadTestActivity extends BaseActivity {
             s = "0" + s;
         }
         return s;
+    }
+
+    public static void startActivity(Context context) {
+        context.startActivity(new Intent(context , ThreadTestActivity.class));
     }
 
 }
