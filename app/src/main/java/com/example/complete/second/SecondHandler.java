@@ -6,13 +6,23 @@ import android.view.View;
 import com.example.complete.annotation.AnnotationTestActivity;
 import com.example.complete.generic.GenericTestActivity;
 import com.example.complete.design.StyleModuleActivity;
+import com.example.complete.thread.ThreadTestActivity;
+import com.example.complete.ui.design.StyleModuleActivity;
 
 public class SecondHandler {
 
+    /**
+     * 泛型
+     * @param view
+     */
     public void skipToGenaric(View view) {
         view.getContext().startActivity(new Intent(view.getContext(), GenericTestActivity.class));
     }
 
+    /**
+     * 注解
+     * @param view
+     */
     public void skipToAnnotation(View view) {
         Intent intent = new Intent(view.getContext(), AnnotationTestActivity.class);
         intent.putExtra("name" , "Alex");
@@ -21,8 +31,20 @@ public class SecondHandler {
 
     }
 
+    /**
+     * 设计模式学习
+     * @param view
+     */
     public void skipToDesignModel(View view){
         StyleModuleActivity.startActivity(view.getContext());
+    }
+
+    /**
+     * 多线程
+     * @param view
+     */
+    public void skipToMultThread(View view){
+        ThreadTestActivity.startActivity(view.getContext());
     }
 
 
