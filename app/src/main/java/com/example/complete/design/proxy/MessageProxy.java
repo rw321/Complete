@@ -1,6 +1,6 @@
-package com.example.complete.design;
+package com.example.complete.design.proxy;
 
-public class MessageProxy implements Message{
+public class MessageProxy implements Message {
 
     MessageImpl mMessageImpl;
 

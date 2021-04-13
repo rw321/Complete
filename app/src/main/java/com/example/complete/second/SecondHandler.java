@@ -5,7 +5,7 @@ import android.view.View;
 
 import com.example.complete.annotation.AnnotationTestActivity;
 import com.example.complete.generic.GenericTestActivity;
-import com.example.complete.ui.design.StyleModuleActivity;
+import com.example.complete.design.StyleModuleActivity;
 
 public class SecondHandler {
 
