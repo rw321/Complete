@@ -7,7 +7,6 @@ import com.example.complete.annotation.AnnotationTestActivity;
 import com.example.complete.generic.GenericTestActivity;
 import com.example.complete.design.StyleModuleActivity;
 import com.example.complete.thread.ThreadTestActivity;
-import com.example.complete.ui.design.StyleModuleActivity;
 
 public class SecondHandler {
 
