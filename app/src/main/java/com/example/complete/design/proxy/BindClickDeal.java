@@ -25,23 +25,36 @@ public class BindClickDeal {
                     int[] value = ((BindClick) annotation).value();
                     for (int l = 0; l < value.length;l++) {
                         View view = activity.findViewById(value[l]);
-                        view.setOnClickListener((View.OnClickListener) Proxy.newProxyInstance(clazz.getClassLoader(), new Class[]{View.OnClickListener.class}, new InvocationHandler() {
-                            @Override
-                            public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-                                method1.invoke(activity);
-                                return null;
-                            }
-                        }));
+                        Class viewClass = view.getClass();
+                        MyInvocation<Activity> invocation = new MyInvocation(activity , method1);
+                        try {
+                            Method viewMethod = viewClass.getMethod("setOnClickListener", View.OnClickListener.class);
+                            viewMethod.invoke(view , Proxy.newProxyInstance(clazz.getClassLoader(), new Class[]{View.OnClickListener.class}, invocation));
+
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                     }
                 }
             }
         }
     }
 
-    public void create(Class clazz){
 
+    public static class MyInvocation<T> implements InvocationHandler {
 
+        T target;
+        Method method;
 
+        public MyInvocation(T target, Method method) {
+            this.target = target;
+            this.method = method;
+        }
+
+        @Override
+        public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+            return this.method.invoke(target , args);
+        }
     }
 
 }

@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <TextView
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="third page"
-        android:textColor="@color/black"
-        android:textSize="@dimen/sp_24" />
+        android:layout_height="match_parent">
 
-</LinearLayout>
+        <com.example.complete.view.ExpandTextView
+            android:id="@+id/expand_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="4"
+            android:ellipsize="end"
+            android:textSize="@dimen/sp_24"
+            android:text="hello world"
+            android:textColor="@color/black"/>
+
+    </LinearLayout>
+</layout>
