@@ -13,7 +13,7 @@ import com.example.complete.databinding.ActivityMainBinding;
 import com.example.complete.home.FirstFragment;
 import com.example.complete.fragment.MeFragment;
 import com.example.complete.second.SecondFragment;
-import com.example.complete.fragment.ThirdFragment;
+import com.example.complete.third.ThirdFragment;
 
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.CommonNavigator;
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.CommonNavigatorAdapter;

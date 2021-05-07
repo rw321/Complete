@@ -1,4 +1,4 @@
-package com.example.complete.fragment;
+package com.example.complete.third;
 
 import android.os.Bundle;
 
@@ -15,6 +15,7 @@ public class ThirdFragment extends BaseFragment<FragmentThirdBinding> {
     @Override
     protected void initData() {
         super.initData();
+        mContentBinding.setHandler(new ThirdHandler());
         mContentBinding.expandText.initWidth(getActivity().getWindowManager().getDefaultDisplay().getWidth());
         mContentBinding.expandText.setMaxLines(4);
         mContentBinding.expandText.setCloseText("她像个顺从的孩子般端坐在牢房角落的小凳子上，仿如一件古怪的战利品。脚边的稻草上搁着白镴盘子，里面是吃剩的食物。我留意到叔叔送来不少肉，甚至还有他自己吃的那种白面包；可是她没动几口。我发现自己一直盯着她看，打量她脚上那双男孩才穿的马靴，还有那剪短的棕发上扣着的男式软帽，就好像她是什么抓来供我们消遣的奇珍异兽" +

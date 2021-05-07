@@ -64,6 +64,8 @@
 
         <activity android:name=".generic.GenericTestActivity" android:screenOrientation="portrait" />
 
+        <activity android:name=".third.DrawableTestActivity" android:screenOrientation="portrait" />
+
         <receiver
             android:name=".receiver.ScreenOffAdminReceiver"
             android:label="@string/app_name"
