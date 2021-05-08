@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.view.View;
 
 import com.example.complete.annotation.AnnotationTestActivity;
+import com.example.complete.arithmetic.ArithmeticTestActivity;
 import com.example.complete.generic.GenericTestActivity;
 import com.example.complete.design.StyleModuleActivity;
 import com.example.complete.thread.ThreadTestActivity;
@@ -44,6 +45,14 @@ public class SecondHandler {
      */
     public void skipToMultThread(View view){
         ThreadTestActivity.startActivity(view.getContext());
+    }
+
+    /**
+     * 算法
+     * @param view
+     */
+    public void skipToArithmetic(View view){
+        view.getContext().startActivity(new Intent(view.getContext() , ArithmeticTestActivity.class));
     }
 
 

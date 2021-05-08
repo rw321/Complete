@@ -2,7 +2,10 @@ package com.example.complete.thread;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.view.View;
+
+import androidx.annotation.RequiresApi;
 
 import com.example.complete.R;
 import com.example.complete.base.BaseActivity;
@@ -58,7 +61,17 @@ public class ThreadTestActivity extends BaseActivity<ActivityThreadBinding> {
 //        syncTest();
 //        volatileTest();
 //        deadLockTest();
-        threadLocalTest();
+//        threadLocalTest();
+//        forkJoinTest();
+//        new CountDownLatchTest().test();
+//        new CyclicBarrierTest().test();
+//        new SemaphoreTest().test();
+//        new ExchangeTest().test();
+        new FutureTaskTest().test();
+    }
+
+    public void forkJoinTest() {
+        new ForkJoinTest().test();
     }
 
     public void threadLocalTest(){

@@ -66,6 +66,8 @@
 
         <activity android:name=".third.DrawableTestActivity" android:screenOrientation="portrait" />
 
+        <activity android:name=".arithmetic.ArithmeticTestActivity" android:screenOrientation="portrait" />
+
         <receiver
             android:name=".receiver.ScreenOffAdminReceiver"
             android:label="@string/app_name"
