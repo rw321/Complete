@@ -7,6 +7,7 @@ import android.view.View;
 
 import androidx.annotation.RequiresApi;
 
+import com.example.common.utils.ToastUtils;
 import com.example.complete.R;
 import com.example.complete.base.BaseActivity;
 import com.example.complete.databinding.ActivityThreadBinding;
@@ -67,7 +68,13 @@ public class ThreadTestActivity extends BaseActivity<ActivityThreadBinding> {
 //        new CyclicBarrierTest().test();
 //        new SemaphoreTest().test();
 //        new ExchangeTest().test();
-        new FutureTaskTest().test();
+//        new FutureTaskTest().test();
+
+    }
+
+    public void test(View view) {
+//        new ForkJoinHomeWork().test();
+        new AtomicTest().test4();
     }
 
     public void forkJoinTest() {
