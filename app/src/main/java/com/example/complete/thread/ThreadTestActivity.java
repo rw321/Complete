@@ -74,7 +74,8 @@ public class ThreadTestActivity extends BaseActivity<ActivityThreadBinding> {
 
     public void test(View view) {
 //        new ForkJoinHomeWork().test();
-        new AtomicTest().test4();
+//        new AtomicTest().test4();
+        new LockTest().test();
     }
 
     public void forkJoinTest() {
