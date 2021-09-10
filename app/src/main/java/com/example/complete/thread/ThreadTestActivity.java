@@ -88,6 +88,7 @@ public class ThreadTestActivity extends BaseActivity<ActivityThreadBinding> {
         System.out.println(count);
 
     }
+    
 
     /**
      * Interrupt 是给正在运行的线程加一个阻断标签,并不会真正影响线程的运行
