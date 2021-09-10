@@ -1,14 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <TextView
+    <data>
+
+        <import type="com.example.complete.third.ThirdHandler" />
+
+        <variable
+            name="handler"
+            type="ThirdHandler" />
+
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="third page"
-        android:textColor="@color/black"
-        android:textSize="@dimen/sp_24" />
+        android:layout_height="match_parent">
 
-</LinearLayout>
+        <com.example.complete.view.ExpandTextView
+            android:id="@+id/expand_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="4"
+            android:ellipsize="end"
+            android:textSize="@dimen/sp_24"
+            android:text="hello world"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:background="@drawable/shape_bg_search"
+            android:paddingLeft="@dimen/dp_12"
+            android:paddingRight="@dimen/dp_12"
+            android:paddingBottom="@dimen/dp_6"
+            android:paddingTop="@dimen/dp_6"
+            android:layout_marginTop="@dimen/dp_12"
+            android:text="Drawable练习"
+            android:onClick="@{(v)->handler.skip2Drawable(v)}"
+            android:textSize="@dimen/sp_24"
+            android:textColor="@color/black" />
+
+    </LinearLayout>
+</layout>

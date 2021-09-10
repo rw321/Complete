@@ -2,11 +2,16 @@ package com.example.complete.thread;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.view.View;
 
+import androidx.annotation.RequiresApi;
+
+import com.example.common.utils.ToastUtils;
 import com.example.complete.R;
 import com.example.complete.base.BaseActivity;
 import com.example.complete.databinding.ActivityThreadBinding;
+import com.example.complete.utils.SleepUtils;
 
 /**
  * java 中的原子性 可见性
@@ -40,6 +45,8 @@ public class ThreadTestActivity extends BaseActivity<ActivityThreadBinding> {
 
     private static final int THREAD_COUNT = 20;
     private static int count;
+    private SynchronizedTest synchronizedTest1;
+    private SynchronizedTest synchronizedTest2;
 
     @Override
     protected int getLayoutId() {
@@ -49,8 +56,74 @@ public class ThreadTestActivity extends BaseActivity<ActivityThreadBinding> {
     @Override
     protected void initData() {
         super.initData();
-        testConnectionPool();
+        //testConnectionPool();
+        //testMethodJoin();
+        //priorityTest();
+//        syncTest();
+//        volatileTest();
+//        deadLockTest();
+//        threadLocalTest();
+//        forkJoinTest();
+//        new CountDownLatchTest().test();
+//        new CyclicBarrierTest().test();
+//        new SemaphoreTest().test();
+//        new ExchangeTest().test();
+//        new FutureTaskTest().test();
 
+    }
+
+    public void test(View view) {
+//        new ForkJoinHomeWork().test();
+//        new AtomicTest().test4();
+        new LockTest().test();
+    }
+
+    public void forkJoinTest() {
+        new ForkJoinTest().test();
+    }
+
+    public void threadLocalTest(){
+//        new ThreadLocalTest().test();
+        new ThreadLocalUnSafeTest().test();
+    }
+
+    public void deadLockTest() {
+        new DeadLockTest().test();
+    }
+
+    /**
+     * volatile测试
+     */
+    private void volatileTest() {
+        new VolatileTest().test();
+    }
+
+    /**
+     * 同步测试
+     */
+    private void syncTest(){
+        synchronizedTest1 = new SynchronizedTest();
+        System.out.println("=========" + synchronizedTest1.toString() + "======");
+        synchronizedTest1.test();
+//        synchronizedTest2 = new SynchronizedTest();
+//        System.out.println("=========" + synchronizedTest2.toString() + "======");
+//        synchronizedTest2.test();
+
+        SleepUtils.sleep(1000);
+
+        System.out.println("count======" + SynchronizedTest.count);
+
+    }
+
+    private void priorityTest() {
+        new PriorityThreadTest().test();
+    }
+
+    /**
+     * 测试thread的join方法
+     */
+    public void testMethodJoin(){
+        new JoinTest().test();
     }
 
     /**

@@ -28,5 +28,11 @@
             android:text="Long和Double类型的原子性测试"
             android:onClick="atomicCheck" />
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="测试"
+            android:onClick="test" />
+
     </LinearLayout>
 </layout>

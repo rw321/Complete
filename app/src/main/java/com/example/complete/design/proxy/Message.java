@@ -1,4 +1,4 @@
-package com.example.complete.design;
+package com.example.complete.design.proxy;
 
 public interface Message {
 
