@@ -29,5 +29,45 @@
             android:paddingLeft="@dimen/dp_12"
             android:onClick="@{(v) -> handler.skip(v)}"/>
 
+
+        <TextView
+            android:id="@+id/tv_nested"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nest Test"
+            android:textColor="@color/color_33"
+            android:background="@drawable/shape_bg_search"
+            android:padding="@dimen/dp_12" />
+
+        <TextView
+            android:id="@+id/tv_percent_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="percent text"
+            android:textColor="@color/color_33"
+            android:background="@drawable/shape_bg_search"
+            android:padding="@dimen/dp_12"
+            android:layout_marginTop="@dimen/dp_12"/>
+
+        <TextView
+            android:id="@+id/tv_drawable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="自定义drawable"
+            android:textColor="@color/color_33"
+            android:background="@drawable/shape_bg_search"
+            android:padding="@dimen/dp_12"
+            android:layout_marginTop="@dimen/dp_12"/>
+
+        <TextView
+            android:id="@+id/tv_recycler"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RecyclerView"
+            android:textColor="@color/color_33"
+            android:background="@drawable/shape_bg_search"
+            android:padding="@dimen/dp_12"
+            android:layout_marginTop="@dimen/dp_12"/>
+
     </LinearLayout>
 </layout>

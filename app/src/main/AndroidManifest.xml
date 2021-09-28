@@ -46,7 +46,7 @@
         <activity android:name=".ui.androidbasic.JobSchedulerActivity" android:screenOrientation="portrait" />
         <activity android:name=".ui.SmartRefreshActivity" android:screenOrientation="portrait" />
         <activity android:name=".ui.customview.GestureRecognitionActivity" android:screenOrientation="portrait" />
-        <activity android:name=".ui.RxJavaTestActivity" android:screenOrientation="portrait" />
+        <activity android:name=".rxjava.RxJavaTestActivity" android:screenOrientation="portrait" />
         <activity android:name=".ui.thirdlib.ThirdLibTestActivity" android:screenOrientation="portrait" />
         <activity android:name=".animation.AnimActivity" android:screenOrientation="portrait" />
         <activity android:name=".animation.TweenAnimActivity" android:screenOrientation="portrait" />
@@ -84,6 +84,15 @@
 
         <service android:name=".ui.androidbasic.MyJobScheduler"
             android:permission="android.permission.BIND_JOB_SERVICE"/>
+
+        <activity android:name=".nested.NestedTestActivity" />
+
+        <activity android:name=".ui.customview.PercentTextActivity" />
+
+        <activity android:name=".ui.customview.DrawableTestActivity" />
+
+
+        <activity android:name=".ui.customview.RecyclerViewActivity" />
 
     </application>
 

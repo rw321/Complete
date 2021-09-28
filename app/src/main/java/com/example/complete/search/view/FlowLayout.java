@@ -56,7 +56,7 @@ public class FlowLayout extends ViewGroup {
             if (childWidth + lineWidth > selfWidth) {
                 allViews.add(lineViews);
                 childViewNeedHeight = childViewNeedHeight + lineHeight + mVerticalSpace;
-                childViewNeedWidth = childHeightMeasureSpec > lineWidth ? childViewNeedWidth : lineWidth;
+                childViewNeedWidth = childViewNeedWidth > lineWidth ? childViewNeedWidth : lineWidth;
                 lineViews = new ArrayList<>();
                 lineWidth = 0;
                 lineHeight = 0;

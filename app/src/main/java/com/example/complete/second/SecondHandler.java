@@ -8,6 +8,7 @@ import com.example.complete.arithmetic.ArithmeticTestActivity;
 import com.example.complete.generic.GenericTestActivity;
 import com.example.complete.design.StyleModuleActivity;
 import com.example.complete.thread.ThreadTestActivity;
+import com.example.complete.ui.thirdlib.ThirdLibTestActivity;
 
 public class SecondHandler {
 
@@ -53,6 +54,14 @@ public class SecondHandler {
      */
     public void skipToArithmetic(View view){
         view.getContext().startActivity(new Intent(view.getContext() , ArithmeticTestActivity.class));
+    }
+
+    /**
+     * 第三方库
+     * @param view
+     */
+    public void skipToThirdLib(View view){
+        view.getContext().startActivity(new Intent(view.getContext() , ThirdLibTestActivity.class));
     }
 
 

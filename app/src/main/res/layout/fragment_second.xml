@@ -91,5 +91,20 @@
             android:textSize="@dimen/sp_24"
             android:textColor="@color/black" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:background="@drawable/shape_bg_search"
+            android:paddingLeft="@dimen/dp_12"
+            android:paddingRight="@dimen/dp_12"
+            android:paddingBottom="@dimen/dp_6"
+            android:paddingTop="@dimen/dp_6"
+            android:layout_marginTop="@dimen/dp_12"
+            android:text="第三方库"
+            android:onClick="@{(v)->handler.skipToThirdLib(v)}"
+            android:textSize="@dimen/sp_24"
+            android:textColor="@color/black" />
+
     </LinearLayout>
 </layout>

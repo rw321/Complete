@@ -46,27 +46,27 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
+
     implementation project(':common')
+    implementation project(':skin')
+
 
     //okhttp
-    implementation("com.squareup.okhttp3:okhttp:3.13.1")
+    api rootProject.ext.dependencies["okhttp3"]
 
     //智能刷新
-    compile 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-14'
-    compile 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-14'//没有使用特殊Header，可以不加这行
+    api rootProject.ext.dependencies["smart-refresh"]
+
     //Rxjava
-    compile 'io.reactivex:rxjava:1.1.0'
-    compile 'io.reactivex:rxandroid:1.1.0'
+    api rootProject.ext.dependencies["rxjava"]
+    api rootProject.ext.dependencies["rxandroid"]
 
-    compile"com.google.dagger:dagger:2.14.1"
-    annotationProcessor"com.google.dagger:dagger-compiler:2.14.1"
 
-    implementation 'androidx.annotation:annotation:+'
-
-    implementation 'com.github.hackware1993:MagicIndicator:1.7.0'
+    api rootProject.ext.dependencies["magic-indicator"]
 
     androidTestImplementation 'androidx.test:rules:1.2.0'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     annotationProcessor project(':compiler')
+    implementation project(':module_annotation')
 
 }

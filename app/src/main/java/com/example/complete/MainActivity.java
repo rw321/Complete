@@ -2,6 +2,7 @@ package com.example.complete;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.view.MotionEvent;
 import android.view.View;
 
 import androidx.core.content.ContextCompat;
@@ -100,5 +101,10 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> {
         commonNavigator.setAdapter(commonNavigatorAdapter);
         mContentBinding.miMain.setNavigator(commonNavigator);
         //ViewPagerHelper.bind(mContentBinding.miMain , mContentBinding.vpMain);
+    }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        return super.dispatchTouchEvent(ev);
     }
 }

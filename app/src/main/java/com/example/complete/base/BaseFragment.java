@@ -19,7 +19,7 @@ public abstract class BaseFragment<DB extends ViewDataBinding> extends Fragment 
 
     protected DB mContentBinding;
     private LayoutBaseBinding rootDataBinding;
-    private Context mContext;
+    protected Context mContext;
 
     @Nullable
     @Override

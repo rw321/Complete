@@ -18,31 +18,6 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/tv_origin_data"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/sp_18"
-            android:padding="@dimen/dp_12"
-            android:lineSpacingMultiplier="1.2"
-            android:textColor="@color/color_33"
-            tools:text="12 , 13 , 14 ,15 , 162 , 13 , 14 ,15 , 162 , 13 , 14 ,15 , 16" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:background="@drawable/shape_bg_search"
-            android:paddingLeft="@dimen/dp_12"
-            android:paddingRight="@dimen/dp_12"
-            android:paddingBottom="@dimen/dp_6"
-            android:paddingTop="@dimen/dp_6"
-            android:layout_marginTop="@dimen/dp_12"
-            android:text="生成随机数"
-            android:onClick="@{()->handler.createRandomValue()}"
-            android:textSize="@dimen/sp_24"
-            android:textColor="@color/black" />
-
-        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -68,9 +43,33 @@
             android:paddingTop="@dimen/dp_6"
             android:layout_marginTop="@dimen/dp_12"
             android:text="归并排序"
-            android:onClick="@{()->handler.sort()}"
             android:textSize="@dimen/sp_24"
             android:textColor="@color/black" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:background="@drawable/shape_bg_search"
+            android:paddingLeft="@dimen/dp_12"
+            android:paddingRight="@dimen/dp_12"
+            android:paddingBottom="@dimen/dp_6"
+            android:paddingTop="@dimen/dp_6"
+            android:layout_marginTop="@dimen/dp_12"
+            android:text="快排"
+            android:onClick="@{()->handler.quicklySort()}"
+            android:textSize="@dimen/sp_24"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/tv_origin_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/sp_18"
+            android:padding="@dimen/dp_12"
+            android:lineSpacingMultiplier="1.2"
+            android:textColor="@color/color_33"
+            tools:text="12 , 13 , 14 ,15 , 162 , 13 , 14 ,15 , 162 , 13 , 14 ,15 , 16" />
 
         <TextView
             android:id="@+id/tv_sort_data"

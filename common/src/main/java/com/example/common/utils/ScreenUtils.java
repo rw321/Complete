@@ -18,7 +18,7 @@ public class ScreenUtils {
     }
 
     /**
-     * 获得屏幕高度
+     * 获得屏幕宽度
      * @return
      */
     public static int getScreenWidth() {
@@ -30,7 +30,7 @@ public class ScreenUtils {
     }
 
     /**
-     * 获得屏幕宽度
+     * 获得屏幕高度
      * @return
      */
     public static int getScreenHeight() {

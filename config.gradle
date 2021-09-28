@@ -1,0 +1,23 @@
+ext{
+
+
+    version = [
+            retrofitSdkVersion      : "2.9.0",
+    ]
+
+    dependencies = [
+            "rxjava"                   :"io.reactivex.rxjava2:rxjava:2.2.21",
+            "rxandroid"                :"io.reactivex.rxjava2:rxandroid:2.1.1",
+            "glide"                    :"com.github.bumptech.glide:glide:4.7.1",
+            "cardview"                 :"androidx.cardview:cardview:1.0.0",
+
+            "retrofit"                 : "com.squareup.retrofit2:retrofit:${version["retrofitSdkVersion"]}",
+            "retrofit-converter-gson"  : "com.squareup.retrofit2:converter-gson:${version["retrofitSdkVersion"]}",
+            "retrofit-adapter-rxjava2" : "com.squareup.retrofit2:adapter-rxjava2:${version["retrofitSdkVersion"]}",
+
+            "okhttp3"                  : "com.squareup.okhttp3:okhttp:4.9.1",
+            "smart-refresh"            : "com.scwang.smart:refresh-layout-kernel:2.0.3",
+            "magic-indicator"          : "com.github.hackware1993:MagicIndicator:1.7.0",
+
+    ]
+}
