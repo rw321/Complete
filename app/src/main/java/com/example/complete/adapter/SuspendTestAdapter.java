@@ -35,6 +35,10 @@ public class SuspendTestAdapter extends RecyclerView.Adapter<SuspendTestAdapter.
         }
     }
 
+    public String getGroupName(int position) {
+        return data.get(position).groupName;
+    }
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

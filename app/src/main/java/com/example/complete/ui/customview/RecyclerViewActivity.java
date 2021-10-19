@@ -8,6 +8,7 @@ import com.example.complete.adapter.SuspendTestAdapter;
 import com.example.complete.base.BaseActivity;
 import com.example.complete.bean.Star;
 import com.example.complete.databinding.ActivityRecyclerBinding;
+import com.example.complete.view.SuspendItemDecoration;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,6 +37,8 @@ public class RecyclerViewActivity extends BaseActivity<ActivityRecyclerBinding> 
 
         mContentBinding.rvContent.setLayoutManager(new LinearLayoutManager(this
                 , RecyclerView.VERTICAL , false));
+
+        mContentBinding.rvContent.addItemDecoration(new SuspendItemDecoration());
 
         mContentBinding.rvContent.setAdapter(new SuspendTestAdapter(data));
 
